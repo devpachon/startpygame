@@ -1,4 +1,7 @@
 import pygame
+from personaje import Personaje
+
+player = Personaje(50, 50)
 
 pygame.init()
 
@@ -7,12 +10,17 @@ alto = 600
 
 ventana = pygame.display.set_mode((ancho, alto))
 
+pygame.display.set_caption("Mi primer juego")
+
 run = True
 
 while run:
+
+    player.dibujar(ventana)
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
-
+    pygame.display.update()
 
 pygame.quit()
