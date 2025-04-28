@@ -1,12 +1,13 @@
 import pygame
 from personaje import Personaje
+import constantes
 
 player = Personaje(50, 50)
 
 pygame.init()
 
-ancho = 800
-alto = 600
+ancho = constantes.ANCHO_VENTANA
+alto = constantes.ALTO_VENTANA
 
 ventana = pygame.display.set_mode((ancho, alto))
 
@@ -21,6 +22,18 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
+
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_a:
+                print("Izquierda")
+            if event.key == pygame.K_d:
+                print("Derecha")
+            if event.key == pygame.K_w:
+                print("Arriba")
+            if event.key == pygame.K_s:
+                print("Abajo")
+
+
     pygame.display.update()
 
 pygame.quit()
