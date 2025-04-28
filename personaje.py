@@ -9,3 +9,7 @@ class Personaje():
 
     def dibujar(self, ventana):
         pygame.draw.rect(ventana, constantes.COLOR_PERSONAJE, self.forma)
+
+    def movimiento(self, delta_x, delta_y):
+        self.forma.x = self.forma.x + delta_x
+        self.forma.y = self.forma.y + delta_y
